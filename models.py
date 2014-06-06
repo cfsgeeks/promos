@@ -16,7 +16,7 @@ class Promo(models.Model):
             help_text="A title for the promo.  Helps you to remember what it is.",
             blank=False)
     status = models.IntegerField(choices=CONTENT_STATUS_CHOICES,default=CONTENT_STATUS_DRAFT)
-    publish_on = models.DateField(blank=False,auto_now_add=True)
+    publish_on = models.DateField(blank=False)
     publish_until = models.DateField(blank=True,null=True)
     url = models.URLField(blank=True)
     page = models.ForeignKey(Page)
