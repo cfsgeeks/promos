@@ -1,3 +1,3 @@
 {% for promo in object_list %}
-<a href="{{promo.url}}><img src="{{promo.image}} alt="{{promo.description}}" /></a>
+<a href="{{promo.url}}"><img src="{{STATIC_URL}}/media/{{promo.image}}" alt="{{promo.description}}" /></a>
 {% endfor %}
