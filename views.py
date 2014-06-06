@@ -5,4 +5,4 @@ import datetime
 TODAY = datetime.date.today()
 
 class PromoList(ListView):
-    queryset = Promo.objects.filter(publish_until__gte=TODAY,status__exact=2)
+    queryset = Promo.objects.filter(status__exact=2).exclude(publish_until__lt=TODAY)
