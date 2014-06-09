@@ -18,8 +18,8 @@ class Promo(models.Model):
     status = models.IntegerField(choices=CONTENT_STATUS_CHOICES,default=CONTENT_STATUS_DRAFT)
     publish_on = models.DateField(blank=False)
     publish_until = models.DateField(blank=True,null=True)
-    url = models.URLField(blank=True)
-    page = models.ForeignKey(Page)
+    url = models.URLField(blank=True,null=True)
+    page = models.ForeignKey(Page,blank=True,null=True)
     image = FileField( max_length=100, upload_to='galleries', format='Image')
 
     def __unicode__(self):
